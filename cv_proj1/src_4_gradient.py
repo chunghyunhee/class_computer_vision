@@ -49,7 +49,7 @@ def onMouse1(event, x, y, flags, param):
                 roi = img[y0:y0+h, x0:x0+w]
                 # cv2.imshow('cropped', roi)
                 # cv2.moveWindow('cropped', 0, 0)
-                cv2.imwrite(f'./cropped_1_new/{count}_cropped.png', roi)
+                # cv2.imwrite(f'./cropped_1_new/{count}_cropped.png', roi)
                 count += 1
             else:
                 cv2.imshow('img', img)
@@ -80,7 +80,7 @@ def onMouse2(event, x, y, flags, param):
                 roi = img2[y0_2:y0_2+h, x0_2:x0_2+w]
                 # cv2.imshow('cropped', roi)
                 # cv2.moveWindow('cropped', 0, 0)
-                cv2.imwrite(f'./cropped_2_new/{count2}_cropped.png', roi)
+                # cv2.imwrite(f'./cropped_2_new/{count2}_cropped.png', roi)
 
                 count2 += 1
             else:
@@ -88,11 +88,11 @@ def onMouse2(event, x, y, flags, param):
                 print('drag should start from left-top side')
  
 img = cv2.imread('1st.jpg')
-# cv2.imshow('img', img)
-# cv2.setMouseCallback('img', onMouse1)
-# key = cv2.waitKey(0)
-# print(key)
-# cv2.destroyAllWindows()
+cv2.imshow('img', img)
+cv2.setMouseCallback('img', onMouse1)
+key = cv2.waitKey(0)
+print(key)
+cv2.destroyAllWindows()
 
 isDragging_2 = False
 x0_2, y0_2, w_2, h_2 = -1, -1, -1, -1
@@ -100,11 +100,11 @@ blue_2, red_2 = (255, 0, 0), (0, 0, 255)
 count2 = 0
 
 img2 = cv2.imread('2nd.jpg')
-# cv2.imshow('img2', img2)
-# cv2.setMouseCallback('img2', onMouse2)
-# key2 = cv2.waitKey(0)
-# print(key2)
-# cv2.destroyAllWindows()
+cv2.imshow('img2', img2)
+cv2.setMouseCallback('img2', onMouse2)
+key2 = cv2.waitKey(0)
+print(key2)
+cv2.destroyAllWindows()
 
 
 # step3. 히스토그램 비교하면서 distance 계산하기 (img1의 4개의 점에 대해, img2에 모두의 점만 비교하면됨)
@@ -145,9 +145,9 @@ for file_nm_1 in os.listdir('./cropped_1') :
         
         hist1 = HOG.HOG_cell_histogram(cell_direction, cell_magnitude, hist_bins)
 
-        matplotlib.pyplot.title('Img1 ' + file_nm_1.split('.')[0])
-        matplotlib.pyplot.bar(x=numpy.arange(12), height=hist1, align="center", width=0.8)
-        matplotlib.pyplot.show()
+        # matplotlib.pyplot.title('Img1 ' + file_nm_1.split('.')[0])
+        # matplotlib.pyplot.bar(x=numpy.arange(12), height=hist1, align="center", width=0.8)
+        # matplotlib.pyplot.show()
         
 
         
@@ -200,9 +200,9 @@ for file_nm_1 in os.listdir('./cropped_1') :
                 
                 hist2 = HOG.HOG_cell_histogram(cell_direction, cell_magnitude, hist_bins)
 
-                matplotlib.pyplot.title('Img2 ' + file_nm_2.split('.')[0])
-                matplotlib.pyplot.bar(x=numpy.arange(12), height=hist2, align="center", width=0.8) ##
-                matplotlib.pyplot.show()
+                # matplotlib.pyplot.title('Img2 ' + file_nm_2.split('.')[0])
+                # matplotlib.pyplot.bar(x=numpy.arange(12), height=hist2, align="center", width=0.8) ##
+                # matplotlib.pyplot.show()
 
                 # img2 = cv2.cvtColor(img2,cv2.COLOR_BGR2GRAY)  # sol1
                 # img2 = clahe.apply(img2)          # sol2
