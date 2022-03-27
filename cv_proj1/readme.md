@@ -22,9 +22,6 @@ $ python src_3_gradient.py
 - step 4. distacne 제일 작은것 끼리 선으로 연결지어서 전체 시각화 (src_2에서 최종결과 확인가능)
 
 
-### Results
-- Crop한 이미지들: ./cropped_1, ./cropped_2
-- Final Result: final_result.png
 
 ### Final Result
 ![result](./repeated_final_result.png)
