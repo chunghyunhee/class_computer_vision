@@ -25,3 +25,6 @@ $ python src_3_gradient.py
 ### Results
 - Crop한 이미지들: ./cropped_1, ./cropped_2
 - Final Result: final_result.png
+
+### Final Result
+![result](./repeated_final_result.png)
